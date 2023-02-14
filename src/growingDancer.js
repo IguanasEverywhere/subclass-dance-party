@@ -4,7 +4,14 @@ var makeGrowingDancer = function (top, left, timeBetweenSteps) {
 
 makeGrowingDancer.prototype = Object.create(MakeDancer.prototype);
 makeGrowingDancer.prototype.step = function() {
-  MakeDancer.prototype.step.call(this); // why is this?
+  //MakeDancer.prototype.step.call(this); // why is this? to schedule time before executing next line?
+  var currentDancer = this;
+  var loopAnimation = function() {
+    currentDancer.$node.css({height: 0, width: 0});
+    currentDancer.$node.animate({height: 100,
+      width: 100}, 1500, function() { loopAnimation(); });
+  };
+  loopAnimation();
 };
 
 
@@ -14,10 +21,7 @@ makeGrowingDancer.prototype.setPosition = function(top, left) {
     left: left,
     border: '10px solid blue',
     'border-radius': 0,
-    'animation-name': 'grow',
-    'animation-duration': '1s',
-    'animation-iteration-count': 'infinite',
+    'background-color': 'yellow',
   };
   this.$node.css(styleSettings);
-
 };
