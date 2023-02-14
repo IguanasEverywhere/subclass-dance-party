@@ -26,6 +26,11 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+.bigger {
+  width: 500px;
+  height: 500px;
+}
+
 /* @keyframes grow {
   from {height: 0;
      width: 0;

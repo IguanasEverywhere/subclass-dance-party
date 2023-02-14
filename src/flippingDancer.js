@@ -41,7 +41,33 @@ makeFlippingDancer.prototype.setPosition = function(top, left) {
   this.$node.css('background-image', 'url(' + backgroundImg + ')');
   this.$node.css('background-size', 100 + 'px ' + 100 + 'px');
   this.$node.css(styleSettings);
+
+
+  var dancerNode = this.$node;
+  this.$node.on('click', function () {
+    var windowHeight = window.innerHeight;
+    var windowWidth = window.innerWidth;
+
+    var heightAndWidthStr = windowHeight + 'px ' + windowWidth + 'px';
+
+    if (this.style.height === '100px') {
+      // this.style.top = 0;
+      // this.style.left = 0;
+      this.style.height = '500px';
+      this.style.width = '500px';
+      this.style['background-size'] = '500px 500px';
+    } else {
+      this.style.height = '100px';
+      this.style.width = '100px';
+      this.style['background-size'] = '100px 100px';
+    }
+
+  });
 };
+
+
+
+
 
 // loopAnimation fn (leftorright)
 // if left

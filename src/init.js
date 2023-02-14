@@ -46,5 +46,7 @@ $(document).ready(function() {
       window.dancers[i].setPosition(window.dancers[i].top, window.innerWidth - 100);
     }
   });
+
+  console.log(window.dancers);
 });
 
