@@ -8,7 +8,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 //var oldStep = blinkyDancer.step;
 makeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
 makeBlinkyDancer.prototype.step = function() {
-  MakeDancer.prototype.step.call(this); // why is this?
+  MakeDancer.prototype.step.call(this);
   this.$node.toggle();
 };
 

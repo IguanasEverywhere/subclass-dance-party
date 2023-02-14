@@ -31,7 +31,20 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     console.log(window.dancers);
+
     $('body').append(dancer.$node);
+  });
+
+
+  $('#goLeft').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].setPosition(window.dancers[i].top, 0);
+    }
+  });
+  $('#goRight').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].setPosition(window.dancers[i].top, window.innerWidth - 100);
+    }
   });
 });
 
